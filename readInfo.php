@@ -136,7 +136,7 @@ foreach(explode("\n\n", $queues['data']) as $colas) {
 			$cola['detalle'][0] = "Callers:";
 		}
 		//indice de llamadas
-		elseif( $cola['detalle'][0] = "Callers:" && $linea != "" && $linea !== "No Callers" && $linea !== "No Members"){			
+		elseif( $cola['detalle'][0] == "Callers:" && $linea != "" && $linea != "No Callers" && $linea != "No Members"){			
 			$canal = explode(' ', $linea);
 			$cola['llamadas'][$contador2]['linea'] = $linea;								
 			$cola['llamadas'][$contador2]['canal'] = $canal[1];
