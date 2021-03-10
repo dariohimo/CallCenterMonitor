@@ -37,12 +37,12 @@ class Template{
         </button-->        
           <ul class="navbar-nav">
 			<div class="container">
-				<a class="btn btn-secondary btn-lg" href="<?php echo URL;?>" role="button">TODAS</a>			  
+				<a class="btn btn-secondary" href="<?php echo URL;?>" role="button">TODAS</a>			  
 <?php
 //$tipo_fila = array('table-light','table-secondary');
 foreach($listado as $cola) {
 ?>
-				<a class="btn btn-secondary btn-lg" href="<?php echo URL . 'colas/ver/' . $cola;?>" role="button"><?php echo $cola?></a>
+				<a class="btn btn-secondary" href="<?php echo URL . 'colas/ver/' . $cola;?>" role="button"><?php echo $cola?></a>
 				<!--div class="dropdown-divider"></div-->
 <?php
 }
