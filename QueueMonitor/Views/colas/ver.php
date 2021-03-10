@@ -38,8 +38,7 @@ foreach($datos['agentes'] as $agente) {
 ?>
 			<div class="col-3">
 				<div align="center" class="alert alert-<?php echo $tipo_etiqueta[$agente['estado']];?>">
-					<span class="badge badge-<?php echo $tipo_etiqueta[$agente['estado']];?>"><?php echo $agente['canal'];?>
-					<br><?php echo $agente['estado'];?>
+					<span class="badge badge-<?php echo $tipo_etiqueta[$agente['estado']];?>"><?php echo $agente['canal'];?> <?php echo $agente['estado'];?>
 					<br><?php echo $agente['nombre'];?>
 <?php
 	if(array_key_exists('callerid', $agente)){
