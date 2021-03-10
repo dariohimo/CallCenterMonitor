@@ -72,7 +72,7 @@ foreach(explode("\n\n", $queues['data']) as $colas) {
 	foreach($cola['detalle'] as $linea){
 		$linea = trim($linea);		
 		//separar los agentes y las llamadas	
-		if( trim($cola['detalle'][0]) == "Members:" && $linea != "Callers:" && $linea != "No Callers" ){
+		if( trim($cola['detalle'][0]) == "Members:" && $linea != "Callers:" && $linea != "No Callers" && $linea != "No Members" ){
 			if( $linea != "Members:" ){
 				$cola['agentes'][$contador1]['linea'] = $linea;
 				$cola['agentes'][$contador1]['miembro'] = $cola['nomcola'];
