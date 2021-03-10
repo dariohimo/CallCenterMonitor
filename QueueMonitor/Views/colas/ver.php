@@ -44,8 +44,8 @@ foreach($datos['agentes'] as $agente) {
 <?php
 	if(array_key_exists('callerid', $agente)){
 ?>					
-					<br>Número: <?php echo $agente['callerid'];?>
-					<br>Duración: <?php echo $agente['duracion'];?></span>
+					<br>Num: <?php echo $agente['callerid'];?>
+					<br>Tiempo: <?php echo $agente['duracion'];?></span>
 <?php					
 }					
 ?>					
@@ -65,7 +65,7 @@ foreach($datos['agentes'] as $agente) {
 			<tr class="table-active">
 			<th scope="col">Número</th>
 			<th scope="col">Canal</th>
-			<th scope="col">T Espera</th>
+			<th scope="col">Tiempo</th>
 			</tr>
 		</thead>
 		<tbody>

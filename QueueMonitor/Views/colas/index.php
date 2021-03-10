@@ -66,8 +66,8 @@ foreach($total_agentes as $agente) {
 					<span class="badge badge-<?php echo $tipo_etiqueta[$agente['estado']];?>"><?php echo $agente['canal'];?>
 					<br><?php echo $agente['estado'];?>
 					<br><?php echo $agente['nombre'];?>
-					<br>Número: <?php echo $agente['callerid'];?>
-					<br>Duración: <?php echo $agente['duracion'];?>									
+					<br>Num: <?php echo $agente['callerid'];?>
+					<br>Tiempo: <?php echo $agente['duracion'];?>									
 					</span>
 				</div>
 			</div>
@@ -86,7 +86,7 @@ foreach($total_agentes as $agente) {
 			<tr class="table-active">
 			<th scope="col">Número</th>
 			<th scope="col">Canal</th>
-			<th scope="col">T Espera</th>
+			<th scope="col">Tiempo</th>
 			</tr>
 		</thead>
 		<tbody>
