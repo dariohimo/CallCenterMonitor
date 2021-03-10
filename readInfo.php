@@ -102,7 +102,7 @@ foreach(explode("\n\n", $queues['data']) as $colas) {
 				$infoagente = explode("(",$linea);				
 				//tomar el nombre del agente y solo la parte del canal Ej: SIP/201, IAX/201
 				$cola['agentes'][$contador1]['nombre'] = $infoagente[0];
-				$infoagente['canal'] = explode(' ', $infoagente[1]);
+				$infoagente['canal'] = explode(' ', str_replace(')','',$infoagente[1]));
 				$cola['agentes'][$contador1]['canal'] = array_shift($infoagente['canal']);
 				
 				/*AstV11 Detectar si el nombre del canal está en el valor de BridgedChannel, la duración incluye el tiempo de espera

@@ -12,7 +12,7 @@ class Template{
 	$url = $protocol . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; //returns the current URL	
 	
 	$page = $_SERVER['PHP_SELF'];
-	$sec = "3";
+	$sec = "5";
 	header("Refresh: $sec; url=$url");
 ?>
 <!DOCTYPE html>
@@ -29,26 +29,33 @@ class Template{
   <!-- <script id="_carbonads_projs" type="text/javascript" src="https://srv.carbonads.net/ads/CKYIE23N.json?segment=placement:bootswatchcom&amp;callback=_carbonads_go"></script> -->
 </head>
 <body>
-  <div class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
         <a href="<?php echo URL;?>" class="navbar-brand">Monitor de colas</a>
-        <!--button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-        </button-->
+        </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav">
-
-				<a class="btn btn-secondary btn-lg" href="<?php echo URL;?>" role="button">TODAS</a>			  
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="Menu">Ver Cola:<span class="caret"></span></a>
+              <div class="dropdown-menu" aria-labelledby="themes">
+			  
 <?php
 //$tipo_fila = array('table-light','table-secondary');
 foreach($listado as $cola) {
 ?>
-				<a class="btn btn-secondary btn-lg" href="<?php echo URL . 'colas/ver/' . $cola;?>" role="button"><?php echo $cola?></a>
+				<a class="dropdown-item" href="<?php echo URL . 'colas/ver/' . $cola;?>"><?php echo $cola?></a>
 				<!--div class="dropdown-divider"></div-->
 <?php
 }
 ?>
-
+				<a class="dropdown-item" href="<?php echo URL;?>">TODAS</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sobre la página</a>
+            </li>
           </ul>
 
           <!--ul class="nav navbar-nav ml-auto">
