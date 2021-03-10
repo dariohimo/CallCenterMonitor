@@ -30,14 +30,7 @@ class colasController{
 		$this->lista = array_keys($infocola);
 		asort($this->lista);
 		return $this->lista;
-	}
-	
-/* 	public static function run(){
-	$infocola = $this->colas->mcread('infocolas');
-	$this->lista = array_keys($infocola);
-	return $this->lista;
-} */
-	
+	}	
 }
 
 ?>
