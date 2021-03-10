@@ -1,0 +1,15 @@
+[Unit]
+Description=Call Center Monitor
+Wants=memcached.service asterisk.service
+After=memcached.service asterisk.service
+
+[Service]
+Type=simple
+User=asterisk
+Group=asterisk
+ExecStart=/usr/bin/php /opt/CallCenterMonitor/readInfo.php
+Restart=on-failure
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target

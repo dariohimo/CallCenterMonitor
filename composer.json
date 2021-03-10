@@ -1,0 +1,5 @@
+{
+    "require": {
+        "welltime/phpagi": "^2.20"
+    }
+}
