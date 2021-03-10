@@ -34,10 +34,9 @@ class Template{
         <a href="<?php echo URL;?>" class="navbar-brand">Monitor de colas</a>
         <!--button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-        </button-->
-        <div class="collapse navbar-collapse" id="navbarResponsive">
+        </button-->        
           <ul class="navbar-nav">
-
+			<div class="container">
 				<a class="btn btn-secondary btn-lg" href="<?php echo URL;?>" role="button">TODAS</a>			  
 <?php
 //$tipo_fila = array('table-light','table-secondary');
@@ -48,7 +47,7 @@ foreach($listado as $cola) {
 <?php
 }
 ?>
-
+			</div>
           </ul>
 
           <!--ul class="nav navbar-nav ml-auto">
@@ -56,8 +55,7 @@ foreach($listado as $cola) {
               <a class="nav-link" href="#" target="_blank">Link Externo</a>
             </li>
           </ul-->
-
-        </div>
+        
       </div>
     </div>
 <div class="container">
