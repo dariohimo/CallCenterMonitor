@@ -39,13 +39,13 @@ foreach($datos['agentes'] as $agente) {
 			<div class="col-3">
 				<div align="center" class="alert alert-<?php echo $tipo_etiqueta[$agente['estado']];?>">
 					<span class="badge badge-<?php echo $tipo_etiqueta[$agente['estado']];?>"><?php echo $agente['canal'];?>
-					<br><?php echo $agente['estado'];?></span>
+					<br><?php echo $agente['estado'];?>
 					<small><br><?php echo $agente['nombre'];?>
 <?php
 	if(array_key_exists('callerid', $agente)){
 ?>					
 					<br><strong>Número: <?php echo $agente['callerid'];?></strong>
-					<br>Duración: <?php echo $agente['duracion'];?>					
+					<br>Duración: <?php echo $agente['duracion'];?></span>
 <?php					
 }					
 ?>					
