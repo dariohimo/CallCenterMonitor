@@ -36,7 +36,7 @@ class Template{
           <span class="navbar-toggler-icon"></span>
         </button-->        
           <ul class="navbar-nav">
-			<div class="container">
+			<div class="container" >
 				<a class="btn btn-outline-secondary" href="<?php echo URL;?>" role="button">TODAS</a>			  
 <?php
 foreach($listado as $cola) {
