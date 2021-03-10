@@ -65,10 +65,10 @@ foreach($total_agentes as $agente) {
 				<div align="center" class="alert alert-<?php echo $tipo_etiqueta[$agente['estado']];?>">
 					<span class="badge badge-<?php echo $tipo_etiqueta[$agente['estado']];?>"><?php echo $agente['canal'];?>
 					<br><?php echo $agente['estado'];?>
-					<small><br><?php echo $agente['nombre'];?>
-					<br><strong>Número: <?php echo $agente['callerid'];?></strong>
+					<br><?php echo $agente['nombre'];?>
+					<br>Número: <?php echo $agente['callerid'];?>
 					<br>Duración: <?php echo $agente['duracion'];?>									
-					</small></span>
+					</span>
 				</div>
 			</div>
 <?php
