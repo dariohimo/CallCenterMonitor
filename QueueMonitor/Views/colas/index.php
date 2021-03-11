@@ -1,5 +1,6 @@
 <?php
 //hacer un array solo de llamadas
+//echo $ruta . "\n";
 $data = $datos;
 $total_llamadas = array();
 $total_agentes = array();
@@ -20,7 +21,7 @@ print_r($total_agentes); */
 <div class="col-8">
 	<div class="container">
 		<h2>Estado de las colas</h2>		
-		<table class="table table-hover">
+		<table class="table table-hover table-sm">
 			<thead>
 			<tr class="table-active">
 			<th scope="col">Cola</th>
@@ -80,7 +81,7 @@ foreach($total_agentes as $agente) {
 <div class="col-4">
 	<div class="container">
 	<h2>Llamadas entrantes</h2>
-		<table class="table table-hover">
+		<table class="table table-hover table-sm">
 			<thead>
 			<tr class="table-active">
 			<th scope="col">Número</th>

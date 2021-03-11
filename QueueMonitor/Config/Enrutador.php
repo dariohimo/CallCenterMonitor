@@ -21,7 +21,7 @@ class Enrutador{
     }
     //Cargar Vista
     $ruta = ROOT . "Views" . DS . $request->getControlador() . DS . $request->getMetodo() . ".php";
-    //print $ruta;
+	require_once "Views/template.php";
     if(is_readable($ruta)){
       require_once $ruta;
     }else{

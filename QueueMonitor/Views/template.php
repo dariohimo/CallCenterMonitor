@@ -2,6 +2,9 @@
 
 Use Controllers\colasController as ListaColas;
 $template = new Template();
+//print_r($argumento);
+//echo $ruta . "\n";
+setcookie("RUTA", $argumento[0]);
 
 class Template{
 	public function __construct(){	  
@@ -13,7 +16,7 @@ class Template{
 	
 	$page = $_SERVER['PHP_SELF'];
 	$sec = "3";
-	header("Refresh: $sec; url=$url");
+	//header("Refresh: $sec; url=$url");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +31,8 @@ class Template{
     <!-- <link rel="stylesheet" href="../_assets/css/custom.min.css"> -->
   <!-- <script id="_carbonads_projs" type="text/javascript" src="https://srv.carbonads.net/ads/CKYIE23N.json?segment=placement:bootswatchcom&amp;callback=_carbonads_go"></script> -->
 </head>
-<body>
+<body onload = "JavaScript:AutoRefresh(3000);">
+<!--body-->
   <div class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
         <a href="<?php echo URL;?>" class="navbar-brand">Monitor de colas</a>
@@ -57,7 +61,7 @@ foreach($listado as $cola) {
         
       </div>
     </div>
-<div class="container">
+<div class="container" id="refrescr">
 <?php
   }
   public function __destruct(){
@@ -97,9 +101,34 @@ foreach($listado as $cola) {
 </footer-->
 </div>
 <script src="https://bootswatch.com/_vendor/jquery/dist/jquery.min.js"></script>
-<script src="https://bootswatch.com/_vendor/popper.js/dist/umd/popper.min.js"></script>
 <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="https://bootswatch.com/_assets/js/custom.js"></script>
+<script type="text/javascript">
+	$(function() {
+		startRefresh();
+	});
+	function startRefresh() {
+		var cookies = document.cookie.split(";").
+		map(function(el){ return el.split("="); }).
+		reduce(function(prev,cur){ prev[cur[0]] = cur[1];return prev },{});
+		
+		var ruta = cookies['RUTA'];
+		setTimeout(startRefresh,3000);
+		$.get(ruta, function(data) { //script a refrescar
+			$('#refrescar').html(data); //tag del div
+		});
+	}
+</script>
+
+<script type = "text/JavaScript">
+ <!--
+	function AutoRefresh(t) {		
+		setTimeout("location.reload(true);", t);
+	}
+ //-->
+</script>
+
+<!--script src="https://bootswatch.com/_vendor/popper.js/dist/umd/popper.min.js"></script-->
+<!--script src="https://bootswatch.com/_assets/js/custom.js"></script-->
 </body>
 </html>
 <?php

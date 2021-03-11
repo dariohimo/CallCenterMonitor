@@ -10,7 +10,7 @@ define('URL', $url);
 
 require_once "Config/Autoload.php";
 Config\Autoload::run();
-require_once "Views/template.php";
+//require_once "Views/template.php";
 Config\Enrutador::run(new Config\Request());
 //Controllers\colaController::run();
 //require_once "Controllers/infocolas.php";
