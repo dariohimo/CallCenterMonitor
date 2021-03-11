@@ -64,7 +64,7 @@ foreach($total_agentes as $agente) {
 					<br><?php echo $agente['nombre'];?>
 					<br>Num: <?php echo $agente['callerid'];?>
 					<br>Tiempo: <?php echo $agente['duracion'];?>									
-					</span>&nbsp&nbsp
+					</span>
 				<!--/div-->
 			</div>
 <?php

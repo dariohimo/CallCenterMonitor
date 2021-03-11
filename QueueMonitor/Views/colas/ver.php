@@ -48,7 +48,7 @@ foreach($datos['agentes'] as $agente) {
 <?php					
 }					
 ?>					
-				</span>&nbsp&nbsp
+				</span>
 				<!--/div-->
 			</div>
 <?php
