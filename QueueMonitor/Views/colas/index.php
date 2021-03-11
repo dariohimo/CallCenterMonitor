@@ -92,7 +92,7 @@ foreach($total_llamadas as $llamada){
 ?>
 			<tr class="table-default">			  
 			  <td><?php echo $llamada['callerid']; ?></td>
-			  <td><?php echo $llamada['canal']; ?></td>
+			  <td><?php echo array_shift(explode('-',$llamada['canal'])); ?></td>
 			  <td><?php echo $llamada['tespera']; ?></td>			  
 			</tr>
 <?php
