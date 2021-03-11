@@ -64,14 +64,14 @@ foreach($total_agentes as $agente) {
 	if(array_key_exists('callerid', $agente) && $agente['estado'] == "Conectado"){
 	//print_r($agente);
 ?>
-			<div class="col-sm-3">
-				<div align="center" class="alert alert-<?php echo $tipo_etiqueta[$agente['estado']];?>">
+			<div class="col-sm-2" align="center">
+				<!--div align="center" class="alert alert-<?php echo $tipo_etiqueta[$agente['estado']];?>"-->
 					<span class="badge badge-<?php echo $tipo_etiqueta[$agente['estado']];?>"><?php echo $agente['canal'];?> <?php echo $agente['estado'];?>
 					<br><?php echo $agente['nombre'];?>
 					<br>Num: <?php echo $agente['callerid'];?>
 					<br>Tiempo: <?php echo $agente['duracion'];?>									
 					</span>
-				</div>
+				<!--/div-->
 			</div>
 <?php
 }
