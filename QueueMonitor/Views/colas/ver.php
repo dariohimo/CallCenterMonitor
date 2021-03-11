@@ -36,19 +36,20 @@ $tipo_etiqueta = array("Pausado" => "danger", "Ocupado" => "secondary", "Conecta
 foreach($datos['agentes'] as $agente) {
 	//print_r($agente);
 ?>
-			<div class="col-3">
-				<div align="center" class="alert alert-<?php echo $tipo_etiqueta[$agente['estado']];?>">
+			<div class="col-sm-2" align="center">
+				<!--div align="center" class="alert alert-<?php echo $tipo_etiqueta[$agente['estado']];?>"-->
 					<span class="badge badge-<?php echo $tipo_etiqueta[$agente['estado']];?>"><?php echo $agente['canal'];?> <?php echo $agente['estado'];?>
 					<br><?php echo $agente['nombre'];?>
 <?php
 	if(array_key_exists('callerid', $agente)){
 ?>					
 					<br>Num: <?php echo $agente['callerid'];?>
-					<br>Tiempo: <?php echo $agente['duracion'];?></span>
+					<br>Tiempo: <?php echo $agente['duracion'];?>
 <?php					
 }					
 ?>					
-				</div>
+				</span>&nbsp&nbsp
+				<!--/div-->
 			</div>
 <?php
 }
@@ -72,7 +73,7 @@ foreach($datos['agentes'] as $agente) {
 //$tipo_fila = array('table-light','table-secondary');
 foreach($datos['llamadas'] as $llamada){
 ?>
-			<tr class="<?php echo $tipo_fila[0]?>">			  
+			<tr class="table-default">			  
 			  <td><?php echo $llamada['callerid']; ?></td>
 			  <td><?php echo $llamada['canal']; ?></td>
 			  <td><?php echo $llamada['tespera']; ?></td>			  
