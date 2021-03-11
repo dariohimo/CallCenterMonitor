@@ -1,3 +1,5 @@
+<!--Este código está bajo la licencia MIT, puedes revisar la licencia el el fichero LICENSE en la raiz del proyecto o en:
+https://github.com/neovoice/CallCenterMonitor/blob/master/LICENSE -->
 <div class="container">
 <div class="row">
 <div class="col-8">

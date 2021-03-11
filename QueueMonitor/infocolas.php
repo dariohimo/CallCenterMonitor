@@ -1,6 +1,6 @@
 <?php
-//header('Content-Type: application/json');
-
+//Este código está bajo la licencia MIT, puedes revisar la licencia el el fichero LICENSE en la raiz del proyecto o en:
+//https://github.com/neovoice/CallCenterMonitor/blob/master/LICENSE
 $mc = new Memcached();
 $mc->addServer('localhost', 11211) or die ("Unable to connect");
 

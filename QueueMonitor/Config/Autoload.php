@@ -1,4 +1,6 @@
 <?php namespace Config;
+//Este código está bajo la licencia MIT, puedes revisar la licencia el el fichero LICENSE en la raiz del proyecto o en:
+//https://github.com/neovoice/CallCenterMonitor/blob/master/LICENSE
 class Autoload{
   public static function run(){
     spl_autoload_register(function ($class){

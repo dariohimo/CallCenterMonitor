@@ -1,4 +1,6 @@
 <?php
+//Este código está bajo la licencia MIT, puedes revisar la licencia el el fichero LICENSE en la raiz del proyecto o en:
+//https://github.com/neovoice/CallCenterMonitor/blob/master/LICENSE
 define('DS', DIRECTORY_SEPARATOR);
 define('ROOT', realpath(dirname(__FILE__)) . DS);
 define('ASTV', '13');
