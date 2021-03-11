@@ -41,11 +41,11 @@ class Template{
         </button-->        
           <ul class="navbar-nav">
 			<div class="container" >
-				<a class="btn btn-outline-secondary" href="<?php echo URL;?>" role="button">TODAS</a>			  
+				<a class="btn btn-outline-secondary btn-sm" href="<?php echo URL;?>" role="button">TODAS</a>			  
 <?php
 foreach($listado as $cola) {
 ?>
-				<a class="btn btn-outline-secondary" href="<?php echo URL . 'colas/ver/' . $cola;?>" role="button"><?php echo $cola?></a>
+				<a class="btn btn-outline-secondary btn-sm" href="<?php echo URL . 'colas/ver/' . $cola;?>" role="button"><?php echo $cola?></a>
 				<!--div class="dropdown-divider"></div-->
 <?php
 }
@@ -61,7 +61,8 @@ foreach($listado as $cola) {
         
       </div>
     </div>
-<div class="container" id="refrescr">
+<!--div class="container" id="refrescar"-->
+<div class="container">
 <?php
   }
   public function __destruct(){
@@ -102,7 +103,7 @@ foreach($listado as $cola) {
 </div>
 <script src="https://bootswatch.com/_vendor/jquery/dist/jquery.min.js"></script>
 <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-<script type="text/javascript">
+<!--script type="text/javascript">
 	$(function() {
 		startRefresh();
 	});
@@ -117,7 +118,7 @@ foreach($listado as $cola) {
 			$('#refrescar').html(data); //tag del div
 		});
 	}
-</script>
+</script-->
 
 <script type = "text/JavaScript">
  <!--
