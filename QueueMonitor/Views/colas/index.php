@@ -8,12 +8,6 @@ foreach($data as $keycola){
 	$total_llamadas = array_merge($total_llamadas, $keycola['llamadas']);
 	$total_agentes = array_merge($total_agentes, $keycola['agentes']);
 }
-/* echo "Datos:\n";
-echo "<br>Llamadas:<br>";
-print_r($total_llamadas);
-echo "<br>Agentes<br>";
-print_r($total_agentes); */
-
 ?>
 
 <div class="container">
@@ -70,7 +64,7 @@ foreach($total_agentes as $agente) {
 					<br><?php echo $agente['nombre'];?>
 					<br>Num: <?php echo $agente['callerid'];?>
 					<br>Tiempo: <?php echo $agente['duracion'];?>									
-					</span>
+					</span>&nbsp&nbsp
 				<!--/div-->
 			</div>
 <?php
