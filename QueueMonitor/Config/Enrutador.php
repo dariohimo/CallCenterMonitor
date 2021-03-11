@@ -22,7 +22,7 @@ class Enrutador{
     //Cargar Vista
     $ruta = ROOT . "Views" . DS . $request->getControlador() . DS . $request->getMetodo() . ".php";
 	require_once "Views/template.php";
-    if(is_readable($ruta)){
+    if(is_readable($ruta) && !array_key_exists('error',$datos)){
       require_once $ruta;
     }else{
       print "No se encontró la ruta: $ruta";

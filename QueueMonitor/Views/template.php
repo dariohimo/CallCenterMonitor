@@ -1,28 +1,25 @@
 <?php namespace Views;
-
 Use Controllers\colasController as ListaColas;
-$template = new Template();
-//print_r($argumento);
-//echo $ruta . "\n";
-setcookie("RUTA", $argumento[0]);
-
+if(array_key_exists('error',$datos)){	
+	$page = $_SERVER['PHP_SELF'];
+	$sec = "3";
+	$protocol = ( $_SERVER['HTTPS'] == 'on' ) ? 'https://':'http://';	
+	$url = $protocol . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; //returns the current URL	
+	header("Refresh: $sec; url=$url");
+	echo "Error, recargando en 3 segundos...\n";	
+} else{
+	$template = new Template();
+}
 class Template{
 	public function __construct(){	  
 	$lista = new ListaColas();
 	$listado = $lista->listacolas();
-	$protocol = ( $_SERVER['HTTPS'] == 'on' ) ? 'https://':'http://';
-	//$directorio = explode('/', $_SERVER['REQUEST_URI']);
-	$url = $protocol . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; //returns the current URL	
-	
-	$page = $_SERVER['PHP_SELF'];
-	$sec = "3";
-	//header("Refresh: $sec; url=$url");
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Issabel | Monitor ACD </title>
+    <title>Asterisk | Monitor ACD </title>
     <link rel="stylesheet" href="<?php echo URL; ?>Views/template/css/bootstrap.min.css" media="screen">
     <!-- <link rel="stylesheet" href="<?php echo URL; ?>Views/template/css/bootstrap.min.css"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -67,12 +64,16 @@ foreach($listado as $cola) {
   }
   public function __destruct(){
 ?>
+</div>
+<div class="navbar fixed-bottom navbar-light bg-light">
+<div class="container">
 <footer id="footer">
   <div class="row">
     <div class="col-lg-12">
       <p>Página de pruebas</p>
     </div>
-  </div>
+</div>
+</div>
 </footer>
 
 <!--footer class="footer">
@@ -103,33 +104,12 @@ foreach($listado as $cola) {
 </div>
 <script src="https://bootswatch.com/_vendor/jquery/dist/jquery.min.js"></script>
 <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-<!--script type="text/javascript">
-	$(function() {
-		startRefresh();
-	});
-	function startRefresh() {
-		var cookies = document.cookie.split(";").
-		map(function(el){ return el.split("="); }).
-		reduce(function(prev,cur){ prev[cur[0]] = cur[1];return prev },{});
-		
-		var ruta = cookies['RUTA'];
-		setTimeout(startRefresh,3000);
-		$.get(ruta, function(data) { //script a refrescar
-			$('#refrescar').html(data); //tag del div
-		});
-	}
-</script-->
 
 <script type = "text/JavaScript">
- <!--
 	function AutoRefresh(t) {		
 		setTimeout("location.reload(true);", t);
 	}
- //-->
 </script>
-
-<!--script src="https://bootswatch.com/_vendor/popper.js/dist/umd/popper.min.js"></script-->
-<!--script src="https://bootswatch.com/_assets/js/custom.js"></script-->
 </body>
 </html>
 <?php

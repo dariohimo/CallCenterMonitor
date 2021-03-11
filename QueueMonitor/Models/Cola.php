@@ -10,10 +10,13 @@ class Cola{
 		$this->mc->addServer('localhost', 11211) or die ("Unable to connect");
 	}
 	//leer infocolas o infocanales
-	public function mcread($tipo){
-		$datos = $this->mc->get($tipo);
-		return $datos;
+	public function mcread($info){
+		$datos = ( $this->mc->get($info) ) ? $this->mc->get($info) : array();
+		if(!empty($datos)){
+			return $datos;
+		}else{
+			return $datos = array("error" => "error");
+		}
 	}
-	//preparar los datos de la cola
 }
 ?>
