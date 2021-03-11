@@ -20,7 +20,7 @@ print_r($total_agentes); */
 <div class="row">
 <div class="col-8">
 	<div class="container">
-		<h2>Estado de las colas</h2>		
+		<h2>Estado de colas con llamadas</h2>		
 		<table class="table table-hover table-sm">
 			<thead>
 			<tr class="table-active">
@@ -36,17 +36,19 @@ print_r($total_agentes); */
 		<tbody>
 <?php
 foreach($data as $datos){
+	if($datos['llamactuales'] || $datos['llamencola']){
 ?>
-			<tr class="<?php echo $tipo_fila[0]?>">
+			<tr class="table-default">
 			  <th scope="row"><?php echo $datos['nomcola']; ?></th>
 			  <td><?php echo sizeof($datos['agentes']); ?></td>
 			  <td><?php echo $datos['llamactuales']; ?></td>
-			  <td><?php echo $datos['llamencola']; ?></td>
+			  <td><?php echo $datos['llamencola']; ?></td>			  
 			  <td><?php echo $datos['llamcontestadas']; ?></td>
 			  <td><?php echo $datos['llamabandonadas']; ?></td>
 			  <td><?php echo str_replace('within', 'en', $datos['niveldeservicio']); ?></td>
 			</tr>
 <?php
+	}
 }
 ?>
 		</tbody>
@@ -94,7 +96,7 @@ foreach($total_agentes as $agente) {
 //$tipo_fila = array('table-light','table-secondary');
 foreach($total_llamadas as $llamada){	
 ?>
-			<tr class="<?php echo $tipo_fila[0]?>">			  
+			<tr class="table-default">			  
 			  <td><?php echo $llamada['callerid']; ?></td>
 			  <td><?php echo $llamada['canal']; ?></td>
 			  <td><?php echo $llamada['tespera']; ?></td>			  
