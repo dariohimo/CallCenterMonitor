@@ -3,7 +3,7 @@
 <div class="col-8">
 	<div class="container">
 		<h2>Estado de las colas</h2>		
-		<table class="table table-hover">
+		<table class="table table-hover table-sm">
 			<thead>
 			<tr class="table-active">
 			<th scope="col">Cola</th>
@@ -59,7 +59,7 @@ foreach($datos['agentes'] as $agente) {
 <div class="col-4">
 	<div class="container">
 	<h2>Llamadas entrantes</h2>
-		<table class="table table-hover">
+		<table class="table table-hover table-sm">
 			<thead>
 			<tr class="table-active">
 			<th scope="col">Número</th>

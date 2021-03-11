@@ -13,7 +13,8 @@ class colasController{
 	}
 
 	public function index(){
-		$infocola = $this->colas->mcread('infocolas');	
+		$infocola = $this->colas->mcread('infocolas');
+		ksort($infocola);
 		return $infocola;
 	}
 
