@@ -29,7 +29,7 @@ class Template{
 <body onload = "JavaScript:AutoRefresh(3000);">
 <!--body-->
   <div class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
+      <!--div class="container"-->
         <a href="<?php echo URL;?>" class="navbar-brand">Ver:</a>       
           <ul class="navbar-nav">
 			<div class="container">
@@ -45,8 +45,8 @@ foreach($listado as $cola) {
 ?>
 			</div>
           </ul>   
-      </div>
-    </div>
+      <!--/div-->
+  </div>
 <div class="container">
 <?php
   }
