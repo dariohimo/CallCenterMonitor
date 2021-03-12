@@ -33,11 +33,12 @@ class Template{
         <a href="<?php echo URL;?>" class="navbar-brand">Ver:</a>       
           <ul class="navbar-nav">
 			<div class="container" >
-				<a class="btn btn-outline-secondary btn-sm" href="<?php echo URL;?>" role="button">TODAS</a>			  
+				<a class="badge badge-dark" href="<?php echo URL;?>" role="button">TODAS</a>
+				<!--a class="btn btn-outline-secondary btn-sm" href="<?php echo URL;?>" role="button">TODAS</a-->
 <?php
 foreach($listado as $cola) {
 ?>
-				<a class="btn btn-outline-secondary btn-sm" href="<?php echo URL . 'colas/ver/' . $cola;?>" role="button"><?php echo $cola?></a>				
+				<a class="badge badge-dark" href="<?php echo URL . 'colas/ver/' . $cola;?>" role="button"><?php echo $cola?></a>				
 <?php
 }
 ?>
