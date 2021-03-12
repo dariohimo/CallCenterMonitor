@@ -30,7 +30,7 @@ class Template{
 <!--body-->
   <div class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
-        <a href="<?php echo URL;?>" class="navbar-brand">Monitor de colas</a>       
+        <a href="<?php echo URL;?>" class="navbar-brand">Ver:</a>       
           <ul class="navbar-nav">
 			<div class="container" >
 				<a class="btn btn-outline-secondary btn-sm" href="<?php echo URL;?>" role="button">TODAS</a>			  
@@ -51,7 +51,7 @@ foreach($listado as $cola) {
   public function __destruct(){
 ?>
 </div>
-<div class="navbar fixed-bottom navbar-light bg-light">
+<!--div class="navbar fixed-bottom navbar-light bg-light">
 <div class="container">
 <footer id="footer">
   <div class="row">
@@ -61,7 +61,7 @@ foreach($listado as $cola) {
 </div>
 </div>
 </footer>
-</div>
+</div-->
 <script src="https://bootswatch.com/_vendor/jquery/dist/jquery.min.js"></script>
 <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
 
