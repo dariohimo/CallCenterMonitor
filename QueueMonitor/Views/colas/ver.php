@@ -38,7 +38,7 @@ $tipo_etiqueta = array("Pausado" => "danger", "Ocupado" => "secondary", "Conecta
 foreach($datos['agentes'] as $agente) {
 	//print_r($agente);
 ?>
-			<div class="col-sm-2" align="center">
+			<div class="col-md-2" align="center">
 				<!--div align="center" class="alert alert-<?php echo $tipo_etiqueta[$agente['estado']];?>"-->
 					<span class="badge badge-<?php echo $tipo_etiqueta[$agente['estado']];?>"><?php echo $agente['canal'];?> <?php echo $agente['estado'];?>
 					<br><?php echo $agente['nombre'];?>
