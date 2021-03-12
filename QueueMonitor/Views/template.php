@@ -38,7 +38,7 @@ class Template{
 <?php
 foreach($listado as $cola) {
 ?>
-			<small> &nbsp </small>
+			<small>&nbsp;</small>
 			<a class="badge badge-dark" href="<?php echo URL . 'colas/ver/' . $cola;?>" role="button"><?php echo $cola?></a>				
 <?php
 }
