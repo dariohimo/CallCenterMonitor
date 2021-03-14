@@ -16,7 +16,7 @@ foreach($data as $keycola){
 <div class="row">
 <div class="col-8">
 	<div class="container">
-		<h2>Estado de colas con llamadas</h2>		
+		<h5>Estado de colas con llamadas</h5>
 		<table class="table table-hover table-sm">
 			<thead>
 			<tr class="table-active">
@@ -51,7 +51,7 @@ foreach($data as $datos){
 		</table>	
 	</div>
 	<div class="container">		
-			<h2>Operadores en llamada</h2>		
+			<h5>Operadores en llamada:</h5>
 		<div class="row">
 <?php
 $tipo_etiqueta = array("Pausado" => "danger", "Ocupado" => "secondary", "Conectado" => "primary", "Offline" => "light", "Libre" => "success", "Timbrando" => "warning");
@@ -62,8 +62,8 @@ foreach($total_agentes as $agente) {
 ?>
 			<div class="col-md-2" align="center">
 				<!--div align="center" class="alert alert-<?php echo $tipo_etiqueta[$agente['estado']];?>"-->
-					<span class="badge badge-<?php echo $tipo_etiqueta[$agente['estado']];?>"><?php echo $agente['canal'];?> <?php echo $agente['estado'];?>					
-					<br>Num: <?php echo $agente['callerid'];?>
+					<span class="badge badge-<?php echo $tipo_etiqueta[$agente['estado']];?>"><?php echo str_replace("@from-queue","",$agente['canal']);?> <?php echo $agente['estado'];?>					
+					<br>Num: <?php echo str_replace("@from-queue","",$agente['callerid']);?>
 					<br>Tiempo: <?php echo $agente['duracion'];?>									
 					</span>
 				<!--/div-->
@@ -77,7 +77,7 @@ foreach($total_agentes as $agente) {
 </div>
 <div class="col-4">
 	<div class="container">
-	<h2>Llamadas entrantes</h2>
+	<h5>Llamadas entrantes</h5>
 		<table class="table table-hover table-sm">
 			<thead>
 			<tr class="table-active">

@@ -4,7 +4,7 @@ https://github.com/neovoice/CallCenterMonitor/blob/master/LICENSE -->
 <div class="row">
 <div class="col-8">
 	<div class="container">
-		<h2>Estado de las colas</h2>		
+		<h5>Estado de las colas</h5>
 		<table class="table table-hover table-sm">
 			<thead>
 			<tr class="table-active">
@@ -31,17 +31,17 @@ https://github.com/neovoice/CallCenterMonitor/blob/master/LICENSE -->
 		</table>	
 	</div>
 	<div class="container">		
-			<h2>Estado de los operadores</h2>		
+			<h5>Estado de los operadores:&nbsp;<span class="badge badge-success">Libre</span>&nbsp;<span class="badge badge-primary">En llamada</span>&nbsp;<span class="badge badge-secondary">Ocupado</span>&nbsp;<span class="badge badge-danger">Pausado</span>&nbsp;<span class="badge badge-info">No conectado</span></h5>
 		<div class="row">
 <?php
-$tipo_etiqueta = array("Pausado" => "danger", "Ocupado" => "secondary", "Conectado" => "primary", "Offline" => "light", "Libre" => "success", "Timbrando" => "warning");
+$tipo_etiqueta = array("Pausado" => "danger", "Ocupado" => "secondary", "Conectado" => "primary", "Offline" => "info", "Libre" => "success", "Timbrando" => "warning");
 foreach($datos['agentes'] as $agente) {
 	//print_r($agente);
 ?>
 			<div class="col-md-2" align="center">
 				<!--div align="center" class="alert alert-<?php echo $tipo_etiqueta[$agente['estado']];?>"-->
-					<span class="badge badge-<?php echo $tipo_etiqueta[$agente['estado']];?>"><?php echo $agente['canal'];?> <?php echo $agente['estado'];?>
-					<br><?php echo $agente['nombre'];?>
+					<span class="badge badge-<?php echo $tipo_etiqueta[$agente['estado']];?>"><?php echo str_replace("@from-queue","", $agente['canal']);?>
+					<br><?php echo str_replace("@from-queue","",$agente['nombre']);?>
 <?php
 	if(array_key_exists('callerid', $agente)){
 ?>					
@@ -61,7 +61,7 @@ foreach($datos['agentes'] as $agente) {
 </div>
 <div class="col-4">
 	<div class="container">
-	<h2>Llamadas entrantes</h2>
+	<h5>Llamadas entrantes</h5>
 		<table class="table table-hover table-sm">
 			<thead>
 			<tr class="table-active">

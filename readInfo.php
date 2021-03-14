@@ -78,6 +78,26 @@ foreach(explode("\n\n", $queues['data']) as $colas) {
 			if( $linea != "Members:" ){
 				$cola['agentes'][$contador1]['linea'] = $linea;
 				$cola['agentes'][$contador1]['miembro'] = $cola['nomcola'];
+
+				//encontrar las llamadas contestadas
+				$cola['agentes'][$contador1]['llamcontestadas'] = ( preg_match("/taken ([0-9]+) calls/", $linea, $matches) ) ? $matches[1]: 0;
+				if(preg_match("/(^Agent\/[0-9]+)/",$linea,$matches)){ //canales Agent
+					echo "entro primer if\n";
+					$cola['agentes'][$contador1]['nombre'] = $matches[0];
+					$cola['agentes'][$contador1]['canal'] = $matches[0];
+				} elseif(preg_match("/(Local\/[0-9]+@from-queue)/",$linea,$matches)){ //Canales Local/202@from-queue
+					echo "entro segundo if\n";
+					$cola['agentes'][$contador1]['nombre'] = $matches[0];
+					$cola['agentes'][$contador1]['canal'] = $matches[0];
+				} else{
+					//crear un array de la información del canal			
+					$infoagente = explode("(",$linea);				
+					//tomar el nombre del agente y solo la parte del canal Ej: SIP/201, IAX/201
+					$cola['agentes'][$contador1]['nombre'] = $infoagente[0];
+					$infoagente['canal'] = explode(' ', str_replace(')','',$infoagente[1]));
+					$cola['agentes'][$contador1]['canal'] = array_shift($infoagente['canal']);
+				}
+				
 				//encontrar el estado del canal
 				if( strpos($linea, "Unavailable") ) {
 					$cola['agentes'][$contador1]['estado'] = "Offline";
@@ -88,7 +108,7 @@ foreach(explode("\n\n", $queues['data']) as $colas) {
 				elseif( strpos($linea, "Not in use") ) {
 					$cola['agentes'][$contador1]['estado'] = "Libre";
 				}
-				elseif( strpos($linea, "in call") ) {
+				elseif( strpos($linea, "in call") || strpos($linea, "Busy" )) {
 					$cola['agentes'][$contador1]['estado'] = "Conectado";
 					$contador3++;
 				}				
@@ -98,14 +118,6 @@ foreach(explode("\n\n", $queues['data']) as $colas) {
 				elseif( strpos($linea, "Ringing")) {
 					$cola['agentes'][$contador1]['estado'] = "Timbrando";
 				}
-				//encontrar las llamadas contestadas
-				$cola['agentes'][$contador1]['llamcontestadas'] = ( preg_match("/taken ([0-9]+) calls/", $linea, $matches) ) ? $matches[1]: 0;			
-				//crear un array de la información del canal			
-				$infoagente = explode("(",$linea);				
-				//tomar el nombre del agente y solo la parte del canal Ej: SIP/201, IAX/201
-				$cola['agentes'][$contador1]['nombre'] = $infoagente[0];
-				$infoagente['canal'] = explode(' ', str_replace(')','',$infoagente[1]));
-				$cola['agentes'][$contador1]['canal'] = array_shift($infoagente['canal']);
 				
 				/*AstV11 Detectar si el nombre del canal está en el valor de BridgedChannel, la duración incluye el tiempo de espera
 				el callerid es CallerIDnum y conectado es Channel
